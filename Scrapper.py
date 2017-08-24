@@ -1,3 +1,7 @@
+# Kuldeep Singh Sidhu
+# github.com/singhsidhukuldeep
+
+
 #importing dependencies
 from urllib.request import urlopen as uReq #for opening URLs
 from bs4 import BeautifulSoup as soup #for screaping the web
