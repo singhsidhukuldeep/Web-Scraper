@@ -56,11 +56,27 @@ for links in allDownloadLinks:
 	elif "EC" in links:
 		conferenceDownloadLinks.append(links)
 
-#Writing the links to files
-checkWrite = input ("\n\nDo you want to create files for the Download Urls [Y/N]: ")
 
-if any(x in checkWrite for x in ('Y', 'y')):
+def allDownloadLinksUrls ():
+	return allDownloadLinks
 
+def premiereLeagueDownloadLinksUrls ():
+	return premiereLeagueDownloadLinks
+
+def championshipDownloadLinksUrls ():
+	return championshipDownloadLinks
+
+def league1DownloadLinksUrls ():
+	return league1DownloadLinks
+
+def league2DownloadLinksUrls ():
+	return league2DownloadLinks
+
+def conferenceDownloadLinksUrls ():
+	return conferenceDownloadLinks
+
+
+def downloadUrlFiles ():
 	file = open("AllDownloadLinks.txt","w")
 	for link in allDownloadLinks:
 		file.write(link)
@@ -97,5 +113,13 @@ if any(x in checkWrite for x in ('Y', 'y')):
 		file.write("\n")
 	file.close()
 
-
 	print ("\n\n\n6 Files have been created:\n\n1:\tAllDownloadLinks.txt\n2:\tPremiereLeagueDownloadLinks.txt\n3:\tChampionshipDownloadLinks.txt\n4:\tLeague1DownloadLinks.txt\n5:\tLeague2DownloadLinks.txt\n6:\tConferenceDownloadLinks.txt\n")
+
+
+#Writing the links to files
+'''checkWrite = input ("\n\nDo you want to create files for the Download Urls [Y/N]: ")
+
+if any(x in checkWrite for x in ('Y', 'y')):
+	downloadUrlFiles()'''
+
+	

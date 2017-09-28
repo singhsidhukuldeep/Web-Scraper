@@ -2,10 +2,34 @@
 # github.com/singhsidhukuldeep
 
 
-from urllib.request import urlopen as uReq
+from urllib import request as uReq
 
-url = "http://download.thinkbroadband.com/10MB.zip"
 
+
+def downloadFile (url):
+	urlOpen = uReq.urlopen(url)
+	urlRead = urlOpen.read()
+	downloadStr = str(urlRead)
+
+	downloadStrLines = downloadStr.split("\\n")
+
+	downloadFileName = url.split("/")[-1]
+
+	downloadStrLength = len(downloadStrLines)
+	progress = 100/downloadStrLength
+	perProgress = 0
+
+	fx = open (downloadFileName , "w")
+	for downloadStrLine in downloadStrLines:
+		fx.write(downloadStrLine + "\n")
+		perProgress += progress
+		print (perProgress)
+		print ("#"*int(perProgress/5)+"\n")
+	print ("---------Download Finished----------")
+
+
+
+'''
 file_name = url.split('/')[-1]
 u = uReq(url)
 f = open(file_name, 'wb')
@@ -26,4 +50,4 @@ while True:
     status = status + chr(8)*(len(status)+1)
     print (status,)
 
-f.close()
+f.close()''' 
